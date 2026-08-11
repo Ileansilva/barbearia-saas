@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Criar conta</title><link rel="stylesheet" href="css/app.css"></head><body>
+<div class="auth-shell"><div class="auth-card"><span class="eyebrow" data-product-name>Minha Plataforma</span><h1>Crie sua barbearia</h1><p>Em poucos minutos você terá um painel e um link público de agendamento.</p>
+<form id="signupForm" class="form-grid">
+<div class="field full"><label>Nome da barbearia</label><input name="business_name" required placeholder="Barbearia Central"></div>
+<div class="field full"><label>Seu nome</label><input name="owner_name" required></div>
+<div class="field full"><label>Link da barbearia</label><input name="slug" required pattern="[a-z0-9-]{3,50}" placeholder="barbearia-central"><small style="color:var(--muted)">Ex.: barbearia-central</small></div>
+<div class="field full"><label>E-mail</label><input name="email" type="email" required></div>
+<div class="field full"><label>Senha</label><input name="password" type="password" minlength="8" required></div>
+<div class="field full"><button class="btn btn-primary" type="submit">Criar minha conta</button></div>
+</form>
+<div id="signupSuccess" class="notice" hidden><strong>Conta criada.</strong><br>Confira seu e-mail para confirmar o cadastro. Depois entre normalmente; a barbearia será criada no primeiro login.</div>
+<p style="text-align:center"><a href="entrar.html">Já tenho conta</a></p></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/config.js"></script><script src="js/supabase-client.js"></script><script src="js/auth.js"></script></body></html>

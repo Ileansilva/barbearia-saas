@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Plataforma para Barbearias</title><link rel="stylesheet" href="css/app.css"></head>
+<body>
+<header class="header"><div class="container nav"><a class="brand" href="index.html"><span data-product-name>Minha Plataforma</span></a><nav class="navlinks"><a href="#recursos">Recursos</a><a href="entrar.html">Entrar</a><a class="btn btn-primary" href="cadastro.html">Criar minha barbearia</a></nav></div></header>
+<main>
+<section class="hero"><div class="container hero-grid"><div><span class="eyebrow">SaaS PARA BARBEARIAS</span><h1>Agenda, equipe e clientes <span>em um só sistema.</span></h1><p>Uma plataforma multiempresa para você comercializar por assinatura. Cada barbearia tem seu próprio painel, identidade visual, serviços, profissionais e agenda isolada.</p><div class="hero-actions"><a class="btn btn-primary" href="cadastro.html">Começar agora</a><a class="btn btn-outline" href="#recursos">Ver recursos</a></div></div><div class="hero-card"><div class="hero-brand"><strong data-product-name>Minha Plataforma</strong><p>Painel white-label • agenda individual por barbeiro • gestão multiempresa</p></div></div></div></section>
+<section class="section" id="recursos"><div class="container"><div class="section-head"><span class="eyebrow">RECURSOS</span><h2>Pronto para vender como serviço.</h2><p class="subtitle">A arquitetura separa os dados de cada barbearia e oferece um painel central para o dono da plataforma.</p></div><div class="services">
+<article class="service-card"><div class="service-placeholder">🏪</div><div class="service-body"><h3>Multiempresa</h3><p>Cada barbearia possui identidade, serviços, barbeiros e agenda próprios.</p></div></article>
+<article class="service-card"><div class="service-placeholder">📅</div><div class="service-body"><h3>Agenda inteligente</h3><p>Disponibilidade por profissional, duração de serviço e bloqueio de conflitos.</p></div></article>
+<article class="service-card"><div class="service-placeholder">⚙️</div><div class="service-body"><h3>Superadmin</h3><p>Veja clientes, altere planos e suspenda ou ative barbearias.</p></div></article>
+</div></div></section>
+</main>
+<footer class="footer"><div class="container footer-row"><span data-product-name>Minha Plataforma</span><span>Software de gestão para barbearias</span></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/config.js"></script><script>document.addEventListener("DOMContentLoaded",()=>document.querySelectorAll("[data-product-name]").forEach(el=>el.textContent=window.SAAS_CONFIG?.PRODUCT_NAME||"Minha Plataforma"));</script>
+</body></html>
