@@ -267,5 +267,29 @@ async function loadSubscription(){
   const {data,error}=await db.from("subscriptions").select("*,plans(*)").eq("tenant_id",tenant.id).maybeSingle();
   if(error)return root.innerHTML="Erro ao carregar plano.";
   if(!data)return root.innerHTML="Nenhum plano vinculado.";
-  root.innerHTML=`<strong>${Util.esc(data.plans?.name||data.plan_id)}</strong><span>Status: ${Util.esc(data.status)}</span><small>Gerenciado pelo administrador da plataforma.</small>`;
+
+  const activeBarbers=(barbers||[]).filter(b=>b.active).length;
+  const limit=data.plans?.max_barbers??"—";
+  let trialText="";
+  if(data.status==="trial"&&data.trial_ends_at){
+    const days=Math.ceil((new Date(data.trial_ends_at)-new Date())/86400000);
+    trialText=days>=0?`<small>Teste grátis: ${days} dia(s) restantes.</small>`:`<small>Período de teste expirado.</small>`;
+  }
+
+  root.innerHTML=`
+    <strong>${Util.esc(data.plans?.name||data.plan_id)}</strong>
+    <span>${Util.money(data.plans?.price_monthly||0)}/mês • Status: ${Util.esc(data.status)}</span>
+    <small>Barbeiros ativos: ${activeBarbers} de ${limit}</small>
+    ${trialText}
+    <small>O limite de barbeiros é aplicado automaticamente pelo plano.</small>`;
+
+  const alert=document.querySelector("#accountAlert");
+  if(alert){
+    let message="";
+    if(tenant.status==="suspended") message="Sua barbearia está suspensa. O site público e as alterações administrativas estão temporariamente bloqueados.";
+    else if(tenant.status==="cancelled") message="Sua assinatura está cancelada. Entre em contato com o administrador da plataforma para reativar.";
+    else if(data.status==="trial"&&data.trial_ends_at&&new Date(data.trial_ends_at)<new Date()) message="Seu período de teste expirou. O agendamento público e as alterações administrativas estão bloqueados até a ativação do plano.";
+    alert.hidden=!message;
+    alert.textContent=message;
+  }
 }
