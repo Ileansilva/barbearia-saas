@@ -7,3 +7,22 @@
 .plan-box{display:grid;gap:5px}.plan-box span,.plan-box small{color:var(--muted)}
 .super-main{padding:28px}.super-kpis{grid-template-columns:repeat(3,1fr)}
 @media(max-width:1050px){.kpis{grid-template-columns:repeat(3,1fr)}}@media(max-width:850px){.dashboard{grid-template-columns:1fr}.sidebar{height:auto;position:static;border-right:0;border-bottom:1px solid var(--line)}.side-nav{grid-template-columns:repeat(3,1fr)}.admin-grid{grid-template-columns:1fr}}@media(max-width:600px){.main,.super-main{padding:15px}.topbar{align-items:flex-start;flex-direction:column}.kpis,.super-kpis{grid-template-columns:1fr}.side-nav{grid-template-columns:repeat(2,1fr)}}
+
+/* Superadmin comercial */
+.super-subtitle{margin:.45rem 0 0;color:var(--muted)}
+.super-commercial-kpis{grid-template-columns:repeat(4,minmax(0,1fr));}
+.kpi small{display:block;color:var(--muted);font-size:.7rem;margin-top:5px;line-height:1.35}
+.kpi-featured{background:radial-gradient(circle at 85% 15%,color-mix(in srgb,var(--brand) 22%,transparent),transparent 55%),#101116;border-color:color-mix(in srgb,var(--brand) 38%,transparent)}
+.kpi-featured strong{color:var(--brand2)}
+.commercial-grid{display:grid;grid-template-columns:1.45fr .75fr;gap:16px;margin-bottom:16px}
+.card-title-row{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:16px}.card-title-row h2{margin:.35rem 0 0}
+.plan-summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.plan-summary-card{border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;background:#0d0e12}.plan-summary-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.plan-summary-head span{color:var(--brand2);font-size:.78rem;font-weight:800}.plan-summary-number{font-size:2.15rem;font-weight:900;margin:14px 0 4px}.plan-summary-card small{color:var(--muted);line-height:1.45}
+.status-summary{display:grid;gap:9px}.status-summary-row{display:flex;align-items:center;justify-content:space-between;padding:12px 13px;border:1px solid rgba(255,255,255,.07);border-radius:12px;background:#0d0e12}.status-summary-row span{display:flex;align-items:center;gap:9px;color:#d8d5ce}.status-dot{width:9px;height:9px;border-radius:50%;display:inline-block;background:#777}.status-dot.trial{background:#e7b95d}.status-dot.active{background:#62c98d}.status-dot.suspended{background:#e28b57}.status-dot.cancelled{background:#e36b6b}
+.client-toolbar{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:16px}.client-toolbar h2{margin:.35rem 0 0}.client-filters{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}.dashboard-input,.table-select{border:1px solid rgba(255,255,255,.1);background:#0c0d11;color:var(--text);padding:10px 11px;border-radius:10px;outline:0}.dashboard-input:focus,.table-select:focus{border-color:var(--brand)}.dashboard-input[type=search]{min-width:230px}
+.super-table{min-width:1180px}.tenant-status{display:inline-flex;padding:6px 9px;border-radius:999px;font-size:.71rem;font-weight:800}.tenant-status.trial{background:rgba(231,185,93,.12);color:#f0cb80}.tenant-status.active{background:rgba(92,199,136,.13);color:#8ce0aa}.tenant-status.suspended{background:rgba(226,139,87,.13);color:#f0ad82}.tenant-status.cancelled{background:rgba(238,106,106,.13);color:#ff9a9a}.super-actions button.warning{border-color:rgba(226,139,87,.35);color:#f0ad82}.super-actions button.danger{border-color:rgba(238,106,106,.35);color:#ff9a9a}
+@media(max-width:1100px){.super-commercial-kpis{grid-template-columns:repeat(2,1fr)}.commercial-grid{grid-template-columns:1fr}.plan-summary-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.client-toolbar{align-items:stretch;flex-direction:column}.client-filters{justify-content:stretch}.client-filters>*{flex:1 1 180px}.plan-summary-grid{grid-template-columns:1fr}.super-commercial-kpis{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.super-commercial-kpis{grid-template-columns:1fr}}
+.account-alert{margin:-6px 0 18px;padding:13px 15px;border-radius:13px;border:1px solid rgba(238,106,106,.3);background:rgba(238,106,106,.08);color:#ffb0b0;font-size:.88rem;line-height:1.5}
+
